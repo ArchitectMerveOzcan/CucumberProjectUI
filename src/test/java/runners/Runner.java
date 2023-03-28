@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/",
         monochrome=true,
         glue = "stepDefinitions",
-        tags = "@RegisterPassword",
+        tags = "@TestResults",
         dryRun = false
 
 )

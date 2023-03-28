@@ -31,6 +31,12 @@ public class RegistrationPage extends BasePage {
     @FindBy (xpath = "(//li[@class='point'])[5]")
     public WebElement strengthBar5;
 
+    @FindBy (id = "//*[@id='username']")
+    public WebElement usernameBar;
+
+    @FindBy (linkText = "Sign in")
+    public WebElement signInButton;
+
     public RegistrationPage(){
         PageFactory.initElements(driver, this);
     }

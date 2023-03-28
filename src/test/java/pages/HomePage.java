@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends BasePage{
+
     @FindBy(id = "account-menu")
     public WebElement userButton;
 
@@ -14,5 +15,9 @@ public class HomePage extends BasePage{
     public HomePage(){
         PageFactory.initElements(driver, this);
     }
+
+    @FindBy (id="//*[@id='login-item']")
+    public WebElement homePageDropDownSignInButton;
+
 
 }
