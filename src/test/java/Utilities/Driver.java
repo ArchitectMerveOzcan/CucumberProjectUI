@@ -17,6 +17,8 @@ public class Driver {
      * That's why constructor is private, only one instance of web driver runs during whole process.
      * */
     public static WebDriver get(String env) {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
         if (driver == null) {
             String browser = PropManager.getProperties(env,"browser");
             switch (browser) {
