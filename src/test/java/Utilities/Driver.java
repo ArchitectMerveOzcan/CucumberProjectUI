@@ -19,16 +19,18 @@ public class Driver {
     public static WebDriver get(String env) {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
+
         if (driver == null) {
             String browser = PropManager.getProperties(env,"browser");
             switch (browser) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
+                    driver = new ChromeDriver(options);
                     break;
                 case "chrome-headless":
+                    options.setHeadless(true);
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
+                    driver = new ChromeDriver(options);
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
